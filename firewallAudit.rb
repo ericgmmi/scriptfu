@@ -1,3 +1,6 @@
+# Audits Cisco ASA ACLs
+# Mode 0 checks for 0 hitcnt ACLs and generates code to remove them
+# Mode 1 takes all ACLs with a hitcnt > 0 generates IP and Port in the format <IP : PORT>. Can be dumped to a text file for use with testExt.rb to check if hosts are listening on those ports.
 if (ARGV.count != 2)
 	abort("Usage: ruby firewallAudit.rb <ACL File> <Mode>\r\n\t<ACL File> Text file with the ASA output of the \"show access-list <access-list name> command\"\r\n\t<Mode> 0: Searches for hitcnt=0 acls\r\n\t<Mode> 1: Searches for acls with a hitcnt\r\n")
 end
