@@ -6,7 +6,6 @@ rules = ARGV[0]
 
 File.open(rules) do |f|
 	f.each_line do |line|
-		line.gsub! "\r", ""
 		line.strip!
 		ipport = line.split(" : ")
 		ip = ipport[0]
